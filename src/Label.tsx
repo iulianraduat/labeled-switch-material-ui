@@ -1,22 +1,36 @@
 import * as React from 'react';
-import { isEmpty } from 'lodash';
+import { isFunction, isEmpty } from 'lodash';
 
-const getStyle = (disabled?: boolean, style?: React.CSSProperties) => {
-	if (isEmpty(style)) {
-		return;
+class Label extends React.PureComponent<LabelProps> {
+	public render() {
+		const { label, onClick } = this.props;
+
+		return (
+			<div onClick={onClick} style={this.getStyle()}>
+				{label}
+			</div>
+		);
 	}
 
-	return {
-		...style as React.CSSProperties,
-		opacity: disabled ? 0.4 : 1
-	};
-};
+	private getStyle() {
+		const { disabled, onClick, style } = this.props;
 
-const Label = React.memo((props: LabelProps) => <div style={getStyle(props.disabled, props.style)}>{props.label}</div>);
+		if (isEmpty(style)) {
+			return;
+		}
+
+		return {
+			cursor: isFunction(onClick) ? 'pointer' : undefined,
+			opacity: disabled ? 0.4 : 1,
+			...style as React.CSSProperties
+		};
+	}
+}
 
 interface LabelProps {
 	disabled?: boolean;
 	label: string;
+	onClick?: () => void;
 	style?: React.CSSProperties;
 }
 

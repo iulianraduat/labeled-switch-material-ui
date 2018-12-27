@@ -76,3 +76,7 @@ export default App;
 ### 1.0.0
 
 - labeled-switch-material-ui is made publicly available
+
+### 1.0.1
+
+- Clicking on a label we switch the knob to it

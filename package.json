@@ -1,6 +1,6 @@
 {
 	"name": "labeled-switch-material-ui",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A material-ui component which implements a iOS like switch with a label on each side",
 	"main": "lib/index.js",
 	"sideEffects": false,

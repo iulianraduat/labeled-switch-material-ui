@@ -51,11 +51,25 @@ class LabeledCheckboxMaterialUi extends React.PureComponent<LabeledCheckboxMater
 						disabled={disabled}
 						knobSize={knobSize}
 						knobOnLeft={knobOnLeft || false}
-						onChange={this.handleChange}
+						onChange={this.handleSwitchKnob}
 					/>
 				}
-				left={<Label disabled={disabledLeft} label={labelLeft} style={styleLeft} />}
-				right={<Label disabled={disabledRight} label={labelRight} style={styleRight} />}
+				left={
+					<Label
+						disabled={disabledLeft}
+						label={labelLeft}
+						onClick={this.handleSelectLeft}
+						style={styleLeft}
+					/>
+				}
+				right={
+					<Label
+						disabled={disabledRight}
+						label={labelRight}
+						onClick={this.handleSelectRight}
+						style={styleRight}
+					/>
+				}
 				style={style}
 			/>
 		);
@@ -72,13 +86,19 @@ class LabeledCheckboxMaterialUi extends React.PureComponent<LabeledCheckboxMater
 		};
 	}
 
-	private handleChange = () => {
+	private handleSelectLeft = () => this.setKnobOnLeft(true);
+
+	private handleSelectRight = () => this.setKnobOnLeft(false);
+
+	private handleSwitchKnob = () => this.setKnobOnLeft(!this.props.knobOnLeft);
+
+	private setKnobOnLeft(knobOnLeft: boolean) {
 		const { onChange } = this.props;
 
 		if (isFunction(onChange)) {
-			onChange(!this.props.knobOnLeft);
+			onChange(knobOnLeft);
 		}
-	};
+	}
 }
 
 interface LabeledCheckboxMaterialUiProps {
