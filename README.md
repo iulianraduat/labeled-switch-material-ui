@@ -31,6 +31,7 @@ The component accepts the props defined bellow in the table.
 | LabeledSwitchMaterialUi _uses_ | Material-ui | React  |
 | -----------------------------: | :---------: | :----: |
 |                          1.0.x |    3.6.0    | 16.6.3 |
+|                          1.1.x |    3.9.2    | 16.8.1 |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -80,3 +81,7 @@ export default App;
 ### 1.0.1
 
 - Clicking on a label we switch the knob to it
+
+### 1.1.0
+
+- Updated packages

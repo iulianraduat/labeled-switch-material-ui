@@ -15,13 +15,17 @@ class Label extends React.PureComponent<LabelProps> {
 	private getStyle() {
 		const { disabled, onClick, style } = this.props;
 
+		const defaultStyle = {
+			cursor: isFunction(onClick) ? 'pointer' : undefined,
+			opacity: disabled ? 0.4 : 1
+		};
+
 		if (isEmpty(style)) {
-			return;
+			return defaultStyle;
 		}
 
 		return {
-			cursor: isFunction(onClick) ? 'pointer' : undefined,
-			opacity: disabled ? 0.4 : 1,
+			...defaultStyle,
 			...style as React.CSSProperties
 		};
 	}
