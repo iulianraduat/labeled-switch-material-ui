@@ -4,6 +4,10 @@ A material-ui component which implements a iOS like switch with a label on each 
 
 ---
 
+## Demo
+
+You can access the storybook for this component [here](https://iulian-radu-at.github.io/labeled-switch-material-ui/).
+
 ## Props
 
 The component accepts the props defined bellow in the table.
@@ -13,6 +17,7 @@ The component accepts the props defined bellow in the table.
 | Name              | Type                          | Required | Default   | Description                                                    |
 |-------------------|-------------------------------|----------|-----------|----------------------------------------------------------------|
 | aspectRatioSwitch | number                        | no       | 2         | The width/height ratio of the switch                           |
+| defaultKnobOnLeft | boolean                       | no       | false     | The initial position of the knob                               |
 | disabled          | boolean                       | no       | false     | The component is disabled                                      |
 | knobOnLeft        | boolean                       | no       | false     | If true, the knob is on the left, otherwise on the right       |
 | knobSize          | number                        | no       | 18        | The size of the knob                                           |
@@ -35,6 +40,7 @@ The component accepts the props defined bellow in the table.
 |                          1.2.x |    3.9.3    | 16.8.6 |
 |                          2.0.x |    4.0.2    | 16.8.6 |
 |                          2.1.x |    4.2.0    | 16.8.6 |
+|                          3.0.x |    4.2.1    | 16.8.6 |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -99,4 +105,10 @@ export default App;
 
 ### 2.1.0
 
+- Updated packages
+
+### 3.0.0
+
+- Made the component to be controlled and uncontrolled
+- Added a storybook
 - Updated packages
