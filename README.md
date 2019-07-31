@@ -112,3 +112,7 @@ export default App;
 - Made the component to be controlled and uncontrolled
 - Added a storybook
 - Updated packages
+
+### 3.0.1
+
+- Fixed the css for main element from flex to inline-flex

@@ -3,20 +3,20 @@ import * as React from 'react';
 const styles: { [key: string]: React.CSSProperties } = {
   center: {
     alignItems: 'center',
-    display: 'flex',
+    display: 'inline-flex',
     margin: '0 5px'
   },
   container: {
     alignItems: 'center',
-    display: 'flex'
+    display: 'inline-flex'
   },
   left: {
     alignItems: 'center',
-    display: 'flex'
+    display: 'inline-flex'
   },
   right: {
     alignItems: 'center',
-    display: 'flex'
+    display: 'inline-flex'
   }
 };
 

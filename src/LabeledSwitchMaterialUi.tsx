@@ -47,8 +47,6 @@ class LabeledSwitchMaterialUi extends React.PureComponent<LabeledSwitchMaterialU
     const colorKnobOnRight: string = styleRight.color as string;
     const colorSwitch: string = styleOfToggle.color as string;
 
-    console.log({ knobOnLeft });
-
     return (
       <Layout
         center={
