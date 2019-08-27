@@ -22,6 +22,7 @@ const showSelectedValue = (id: string) => (knobOnLeft: boolean) =>
   (document.getElementById(id).textContent = knobOnLeft ? 'knobOnLeft' : 'knobOnRight');
 
 storiesOf('LabeledSwitchMaterialUi', module)
+  .addParameters({ options: { showPanel: false } })
   .add('uncontrolled without knob position set', () => (
     <div>
       <LabeledSwitchMaterialUi
