@@ -42,6 +42,7 @@ The component accepts the props defined bellow in the table.
 |                          2.1.x |    4.2.0    | 16.8.6 |
 |                          3.0.x |    4.2.1    | 16.8.6 |
 |                          3.1.x |    4.3.3    | 16.9.0 |
+|                          3.2.x |    4.9.0    | 16.9.0 |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -118,6 +119,10 @@ export default App;
 
 - Fixed the css for main element from flex to inline-flex
 
-### 3.0.1
+### 3.1.0
+
+- Updated packages
+
+### 3.2.0
 
 - Updated packages
