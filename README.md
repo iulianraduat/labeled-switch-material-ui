@@ -1,4 +1,4 @@
-# labeled-switch-material-ui
+# labeled-switch-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/labeled-switch-material-ui 'Weekly downloads')
 
 A material-ui component which implements a iOS like switch with a label on each side
 
@@ -15,7 +15,7 @@ The component accepts the props defined bellow in the table.
 ### Props accepted by LabeledSwitchMaterialUi
 
 | Name              | Type                          | Required | Default   | Description                                                    |
-|-------------------|-------------------------------|----------|-----------|----------------------------------------------------------------|
+| ----------------- | ----------------------------- | -------- | --------- | -------------------------------------------------------------- |
 | aspectRatioSwitch | number                        | no       | 2         | The width/height ratio of the switch                           |
 | defaultKnobOnLeft | boolean                       | no       | false     | The initial position of the knob                               |
 | disabled          | boolean                       | no       | false     | The component is disabled                                      |
@@ -34,7 +34,7 @@ The component accepts the props defined bellow in the table.
 ## Versions
 
 | LabeledSwitchMaterialUi _uses_ | Material-ui | React  |
-|-------------------------------:|:-----------:|:------:|
+| -----------------------------: | :---------: | :----: |
 |                          1.0.x |    3.6.0    | 16.6.3 |
 |                          1.1.x |    3.9.2    | 16.8.1 |
 |                          1.2.x |    3.9.3    | 16.8.6 |
@@ -43,6 +43,7 @@ The component accepts the props defined bellow in the table.
 |                          3.0.x |    4.2.1    | 16.8.6 |
 |                          3.1.x |    4.3.3    | 16.9.0 |
 |                          3.2.x |    4.9.0    | 16.9.0 |
+|                          3.3.x |    4.9.7    | 16.9.0 |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -57,18 +58,14 @@ The component accepts the props defined bellow in the table.
 The base component which allows to create read-only or creatable select components for selecting only one or more values:
 
 ```js
-import * as React from "react";
-import LabeledSwitchMaterialUi from "labeled-switch-material-ui";
+import * as React from 'react';
+import LabeledSwitchMaterialUi from 'labeled-switch-material-ui';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LabeledSwitchMaterialUi
-          labelLeft="Use numbers"
-          labelRight="Use strings"
-          onChange={this.handleChange}
-        />
+        <LabeledSwitchMaterialUi labelLeft="Use numbers" labelRight="Use strings" onChange={this.handleChange} />
       </div>
     );
   }
@@ -126,3 +123,8 @@ export default App;
 ### 3.2.0
 
 - Updated packages
+
+### 3.3.0
+
+- Updated packages
+- Moved from npm to yarn
