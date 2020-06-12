@@ -1,4 +1,4 @@
-# labeled-switch-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/labeled-switch-material-ui 'Weekly downloads')
+# labeled-switch-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/labeled-switch-material-ui "Weekly downloads")
 
 A material-ui component which implements a iOS like switch with a label on each side
 
@@ -44,6 +44,7 @@ The component accepts the props defined bellow in the table.
 |                          3.1.x |    4.3.3    | 16.9.0 |
 |                          3.2.x |    4.9.0    | 16.9.0 |
 |                          3.3.x |    4.9.7    | 16.9.0 |
+|                          3.4.x |   4.10.2    | 16.9.0 |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -58,14 +59,18 @@ The component accepts the props defined bellow in the table.
 The base component which allows to create read-only or creatable select components for selecting only one or more values:
 
 ```js
-import * as React from 'react';
-import LabeledSwitchMaterialUi from 'labeled-switch-material-ui';
+import * as React from "react";
+import LabeledSwitchMaterialUi from "labeled-switch-material-ui";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LabeledSwitchMaterialUi labelLeft="Use numbers" labelRight="Use strings" onChange={this.handleChange} />
+        <LabeledSwitchMaterialUi
+          labelLeft="Use numbers"
+          labelRight="Use strings"
+          onChange={this.handleChange}
+        />
       </div>
     );
   }
@@ -128,3 +133,7 @@ export default App;
 
 - Updated packages
 - Moved from npm to yarn
+
+### 3.4.0
+
+- Updated packages
