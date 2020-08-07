@@ -1,1 +1,1 @@
-export * from './LabeledSwitchMaterialUi';
+export { default } from "./LabeledSwitchMaterialUi";
