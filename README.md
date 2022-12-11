@@ -48,6 +48,7 @@ The component accepts the props defined bellow in the table.
 |                          3.5.x |   4.11.0    |      16.9.0      |
 |                          3.6.x |   4.11.3    | 16.9.0 or 17.0.0 |
 |                          3.7.x |   4.12.3    | 16.9.0 or 17.0.0 |
+|                          4.0.x |   5.10.17   |     >=18.0.0     |
 
 ### About versioning schema used for LabeledSwitchMaterialUi
 
@@ -69,7 +70,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LabeledSwitchMaterialUi labelLeft="Use numbers" labelRight="Use strings" onChange={this.handleChange} />
+        <LabeledSwitchMaterialUi
+          labelLeft="Use numbers"
+          labelRight="Use strings"
+          onChange={this.handleChange}
+        />
       </div>
     );
   }
@@ -153,3 +158,8 @@ export default App;
 ### 3.7.0
 
 - Updated the packages
+
+### 4.0.0
+
+- Migrated to material-ui 5
+- Supports minimum React 18

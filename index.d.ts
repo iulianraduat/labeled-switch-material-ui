@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface LabeledSwitchMaterialUiProps extends React.Props<LabeledSwitchMaterialUi> {
+export interface LabeledSwitchMaterialUiProps  {
   aspectRatioSwitch?: number;
   defaultKnobOnLeft?: boolean;
   disabled?: boolean;

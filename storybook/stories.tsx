@@ -1,52 +1,64 @@
-import LabeledSwitchMaterialUi from '../src/LabeledSwitchMaterialUi';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import LabeledSwitchMaterialUi from '../src/LabeledSwitchMaterialUi';
 
 const style: React.CSSProperties = {
-  height: 20
+  height: 20,
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
   labelLeft: {
-    color: 'red'
+    color: 'red',
   },
   labelRight: {
-    color: 'blue'
+    color: 'blue',
   },
   switch: {
-    color: 'aqua'
-  }
+    color: 'aqua',
+  },
 };
 
 const showSelectedValue = (id: string) => (knobOnLeft: boolean) =>
-  (document.getElementById(id).textContent = knobOnLeft ? 'knobOnLeft' : 'knobOnRight');
+  (document.getElementById(id)!.textContent = knobOnLeft
+    ? 'knobOnLeft'
+    : 'knobOnRight');
 
-storiesOf('LabeledSwitchMaterialUi', module)
-  .addParameters({ options: { showPanel: false } })
-  .add('uncontrolled without knob position set', () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        onChange={showSelectedValue('uncontrolled')}
-      />
-      <div style={style} />
-      Selected value: <span id="uncontrolled" />
-    </div>
-  ))
-  .add('uncontrolled with knob position set', () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        defaultKnobOnLeft={true}
-        onChange={showSelectedValue('uncontrolled')}
-      />
-      <div style={style} />
-      Selected value: <span id="uncontrolled" />
-    </div>
-  ))
-  .add('controlled', () => (
+export default {
+  title: 'LabeledSwitchMaterialUi',
+  component: LabeledSwitchMaterialUi,
+} as ComponentMeta<typeof LabeledSwitchMaterialUi>;
+
+export const UncontrolledWithoutKnobPositionSet: ComponentStory<
+  typeof LabeledSwitchMaterialUi
+> = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      onChange={showSelectedValue('uncontrolled')}
+    />
+    <div style={style} />
+    Selected value: <span id="uncontrolled" />
+  </div>
+);
+
+export const UncontrolledWithKnobPositionSet: ComponentStory<
+  typeof LabeledSwitchMaterialUi
+> = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      defaultKnobOnLeft={true}
+      onChange={showSelectedValue('uncontrolled')}
+    />
+    <div style={style} />
+    Selected value: <span id="uncontrolled" />
+  </div>
+);
+
+export const Controlled: ComponentStory<typeof LabeledSwitchMaterialUi> =
+  () => (
     <div>
       <LabeledSwitchMaterialUi
         labelLeft="Left label"
@@ -63,20 +75,23 @@ storiesOf('LabeledSwitchMaterialUi', module)
       <div style={style} />
       Selected value: <span id="controlled" />
     </div>
-  ))
-  .add('disabled', () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        disabled={true}
-        onChange={showSelectedValue('disabled')}
-      />
-      <div style={style} />
-      Selected value: <span id="disabled" />
-    </div>
-  ))
-  .add('with custom colors', () => (
+  );
+
+export const Disabled: ComponentStory<typeof LabeledSwitchMaterialUi> = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      disabled={true}
+      onChange={showSelectedValue('disabled')}
+    />
+    <div style={style} />
+    Selected value: <span id="disabled" />
+  </div>
+);
+
+export const WithCustomColors: ComponentStory<typeof LabeledSwitchMaterialUi> =
+  () => (
     <div>
       <LabeledSwitchMaterialUi
         labelLeft="Left label"
@@ -89,28 +104,34 @@ storiesOf('LabeledSwitchMaterialUi', module)
       <div style={style} />
       Selected value: <span id="colors" />
     </div>
-  ))
-  .add('with custom aspect ratio', () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        aspectRatioSwitch={5}
-        onChange={showSelectedValue('aspect-ratio')}
-      />
-      <div style={style} />
-      Selected value: <span id="aspect-ratio" />
-    </div>
-  ))
-  .add('with custom knob size', () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        knobSize={40}
-        onChange={showSelectedValue('knob-size')}
-      />
-      <div style={style} />
-      Selected value: <span id="knob-size" />
-    </div>
-  ));
+  );
+
+export const WithCustomAspectRatio: ComponentStory<
+  typeof LabeledSwitchMaterialUi
+> = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      aspectRatioSwitch={5}
+      onChange={showSelectedValue('aspect-ratio')}
+    />
+    <div style={style} />
+    Selected value: <span id="aspect-ratio" />
+  </div>
+);
+
+export const withCustomKnobSize: ComponentStory<
+  typeof LabeledSwitchMaterialUi
+> = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      knobSize={40}
+      onChange={showSelectedValue('knob-size')}
+    />
+    <div style={style} />
+    Selected value: <span id="knob-size" />
+  </div>
+);
