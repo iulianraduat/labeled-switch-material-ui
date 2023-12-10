@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import LabeledSwitchMaterialUi from '../src/LabeledSwitchMaterialUi';
 
@@ -23,14 +23,14 @@ const showSelectedValue = (id: string) => (knobOnLeft: boolean) =>
     ? 'knobOnLeft'
     : 'knobOnRight');
 
-export default {
+const meta: Meta<typeof LabeledSwitchMaterialUi> = {
   title: 'LabeledSwitchMaterialUi',
   component: LabeledSwitchMaterialUi,
-} as ComponentMeta<typeof LabeledSwitchMaterialUi>;
+} as Meta<typeof LabeledSwitchMaterialUi>;
+export default meta;
+type Story = StoryObj<typeof LabeledSwitchMaterialUi>;
 
-export const UncontrolledWithoutKnobPositionSet: ComponentStory<
-  typeof LabeledSwitchMaterialUi
-> = () => (
+export const UncontrolledWithoutKnobPositionSet = () => (
   <div>
     <LabeledSwitchMaterialUi
       labelLeft="Left label"
@@ -42,9 +42,7 @@ export const UncontrolledWithoutKnobPositionSet: ComponentStory<
   </div>
 );
 
-export const UncontrolledWithKnobPositionSet: ComponentStory<
-  typeof LabeledSwitchMaterialUi
-> = () => (
+export const UncontrolledWithKnobPositionSet = () => (
   <div>
     <LabeledSwitchMaterialUi
       labelLeft="Left label"
@@ -57,27 +55,26 @@ export const UncontrolledWithKnobPositionSet: ComponentStory<
   </div>
 );
 
-export const Controlled: ComponentStory<typeof LabeledSwitchMaterialUi> =
-  () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        knobOnLeft={true}
-        onChange={showSelectedValue('controlled')}
-      />
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        knobOnLeft={false}
-        onChange={showSelectedValue('controlled')}
-      />
-      <div style={style} />
-      Selected value: <span id="controlled" />
-    </div>
-  );
+export const Controlled = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      knobOnLeft={true}
+      onChange={showSelectedValue('controlled')}
+    />
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      knobOnLeft={false}
+      onChange={showSelectedValue('controlled')}
+    />
+    <div style={style} />
+    Selected value: <span id="controlled" />
+  </div>
+);
 
-export const Disabled: ComponentStory<typeof LabeledSwitchMaterialUi> = () => (
+export const Disabled = () => (
   <div>
     <LabeledSwitchMaterialUi
       labelLeft="Left label"
@@ -90,25 +87,22 @@ export const Disabled: ComponentStory<typeof LabeledSwitchMaterialUi> = () => (
   </div>
 );
 
-export const WithCustomColors: ComponentStory<typeof LabeledSwitchMaterialUi> =
-  () => (
-    <div>
-      <LabeledSwitchMaterialUi
-        labelLeft="Left label"
-        labelRight="Right label"
-        styleLabelLeft={styles.labelLeft}
-        styleLabelRight={styles.labelRight}
-        styleSwitch={styles.switch}
-        onChange={showSelectedValue('colors')}
-      />
-      <div style={style} />
-      Selected value: <span id="colors" />
-    </div>
-  );
+export const WithCustomColors = () => (
+  <div>
+    <LabeledSwitchMaterialUi
+      labelLeft="Left label"
+      labelRight="Right label"
+      styleLabelLeft={styles.labelLeft}
+      styleLabelRight={styles.labelRight}
+      styleSwitch={styles.switch}
+      onChange={showSelectedValue('colors')}
+    />
+    <div style={style} />
+    Selected value: <span id="colors" />
+  </div>
+);
 
-export const WithCustomAspectRatio: ComponentStory<
-  typeof LabeledSwitchMaterialUi
-> = () => (
+export const WithCustomAspectRatio = () => (
   <div>
     <LabeledSwitchMaterialUi
       labelLeft="Left label"
@@ -121,9 +115,7 @@ export const WithCustomAspectRatio: ComponentStory<
   </div>
 );
 
-export const withCustomKnobSize: ComponentStory<
-  typeof LabeledSwitchMaterialUi
-> = () => (
+export const withCustomKnobSize = () => (
   <div>
     <LabeledSwitchMaterialUi
       labelLeft="Left label"
